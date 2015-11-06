@@ -173,7 +173,7 @@ task generateDocs(dependsOn: integrateDistTemp) << {
     }
 }
 
-task distZip(type: Zip, dependsOn: [jar, generateDocs]) {
+task distZip(type: Zip, dependsOn: [jar]) {
     from (distBaseDir) {
         exclude "*/bin/dita"
         exclude "*/bin/dita.bat"
@@ -193,7 +193,7 @@ task distZip(type: Zip, dependsOn: [jar, generateDocs]) {
     }
     archiveName "dita-ot-${project.version}.zip"
 }
-task distTarGz(type: Tar, dependsOn: [jar, generateDocs]) {
+task distTarGz(type: Tar, dependsOn: [jar]) {
     compression = Compression.GZIP
     from (distBaseDir ) {
         exclude "*/bin/dita"
