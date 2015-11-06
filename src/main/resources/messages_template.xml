@@ -425,7 +425,7 @@
   </message>
   
   <message id="DOTX019W" type="WARN">
-    <reason>The type attribute on a topicref was set to '%1', but the topicref references a '%2' topic. This may cause your links to sort incorrectly in the output. Note that the type attribute cascades in maps, so the value '%1' may come from an ancestor topicref.</reason>
+    <reason>(ignore)</reason>
     <response></response>
   </message>
   
