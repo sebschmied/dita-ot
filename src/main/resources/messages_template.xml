@@ -387,8 +387,8 @@
   <!-- This message can no longer appear, though the template for producing it remains in conrefImpl.xsl.
        Support for mismatched domains was added in release 1.5 or earlier. -->
   <message id="DOTX012W" type="WARN">
-    <reason>When you conref another topic or an item in another topic, the domains attribute of the target topic must be equal to or a subset of the current topic's domains attribute.</reason>
-    <response>Put your target under an appropriate domain. You can see the messages guide for more help.</response>
+    <reason>(deprecated)</reason>
+    <response></response>
   </message>
   
   <message id="DOTX013E" type="ERROR">
@@ -425,7 +425,7 @@
   </message>
   
   <message id="DOTX019W" type="WARN">
-    <reason>(ignore)</reason>
+    <reason>(deprecated)</reason>
     <response></response>
   </message>
   
