@@ -165,14 +165,8 @@ task integrateDistTemp(dependsOn: [copyDistTemp, ":fo:copyDistTemp", ":axf:copyD
     ant.ant([antfile: "${distTempDir}/integrator.xml", dir: distTempDir])
 }
 
-task generateDocs(dependsOn: integrateDistTemp) << {
-    ant.ant([antfile: "${distTempDir}/docsrc/build.xml", dir: "${distTempDir}/docsrc"]) {
-        // Override system DITA_HOME default priority
-        property(name: "dita.home", location: distTempDir)
-    }
-}
 
-task distZip(type: Zip, dependsOn: [jar, generateDocs]) {
+task distZip(type: Zip, dependsOn: [jar]) {
     from (distTempDir) {
         exclude "bin/dita"
         exclude "bin/dita.bat"
@@ -192,7 +186,7 @@ task distZip(type: Zip, dependsOn: [jar, generateDocs]) {
     }
     archiveName "dita-ot-${project.version}.zip"
 }
-task distTarGz(type: Tar, dependsOn: [jar, generateDocs]) {
+task distTarGz(type: Tar, dependsOn: [jar]) {
     compression = Compression.GZIP
     from (distTempDir) {
         exclude "bin/dita"
